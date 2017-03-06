@@ -1,6 +1,5 @@
 jenkins:
-  build: .
-  dockerfile: Dockerfile
+  image: andisan/jenkins
   ports:
     - "8080:8080"
     - "50000:50000"
