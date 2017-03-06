@@ -8,7 +8,7 @@ USER root
 # install wget
 RUN apt-get update && apt-get install -y wget
 
-# get maven 3.2.2
+# get maven 3.3.9
 ENV maven_version 3.3.9
 ENV maven_checksum 516923b3955b6035ba6b0a5b031fbd8b
 RUN wget --no-verbose -O /tmp/apache-maven-${maven_version}.tar.gz http://archive.apache.org/dist/maven/maven-3/${maven_version}/binaries/apache-maven-${maven_version}-bin.tar.gz
