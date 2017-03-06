@@ -1,5 +1,6 @@
 jenkins:
-  image: andisan/jenkin
+  build: .
+  dockerfile: Dockerfile
   ports:
     - "8080:8080"
     - "50000:50000"
@@ -13,14 +14,10 @@ seleniumhub:
 
 firefoxnode:
   image: selenium/node-firefox
-  ports:
-    - "5900:5900"
   links:
     - seleniumhub:hub
 
 chromenode:
   image: selenium/node-chrome
-  ports:
-    - "5555:5555"
   links:
     - seleniumhub:hub
