@@ -29,20 +29,6 @@ RUN apt-get install -y git
 # install nano
 RUN apt-get install -y nano
 
-# install transport https, ca certificates and add repo
-#RUN apt-get install -y apt-transport-https ca-certificates software-properties-common
-RUN apt-get install -y iptables init-system-helpers libapparmor1
-
-# install Docker
-#RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D && apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main' && apt-get update && apt-get install -y docker-engine && apt-get -f install
-#RUN apt-get -y install docker.io
-#RUN ln -sf /usr/bin/docker.io /usr/local/bin/docker && sed -i '$acomplete -F _docker docker' /etc/bash_completion.d/docker.io
-#RUN update-rc.d docker.io defaults
-RUN wget --no-verbose https://apt.dockerproject.org/repo/pool/main/d/docker-engine/docker-engine_17.03.0~ce-0~debian-jessie_amd64.deb
-RUN apt-get update
-#RUN apt-get -f install
-RUN dpkg -i docker-engine_17.03.0~ce-0~debian-jessie_amd64.deb
-
 # remove download archive files
 RUN apt-get clean
 
