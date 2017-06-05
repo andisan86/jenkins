@@ -39,4 +39,4 @@ USER jenkins
 ENV JAVA_OPTS=-Djenkins.install.runSetupWizard=false
 
 # install Jenkins plugins
-RUN /usr/local/bin/install-plugins.sh maven-plugin docker-plugin docker-slaves build-pipeline-plugin config-file-provider console-column-plugin copy-to-slave extra-columns favorite cloudbees-folder git htmlpublisher javadoc workflow-aggregator docker-build-step
+RUN /usr/local/bin/install-plugins.sh maven-plugin docker-plugin docker-slaves build-pipeline-plugin config-file-provider console-column-plugin copy-to-slave extra-columns favorite cloudbees-folder git htmlpublisher javadoc docker-build-step
