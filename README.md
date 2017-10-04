@@ -27,7 +27,7 @@ This Jenkins image has the following:
 
 ## How to run
 1. Pull the docker image: `docker pull andisan/jenkins`
-2. Run with this command: `docker run -t -i -p 8080:8080 -P andisan/jenkins`
+2. Run with this command: `docker run -d -p 8080:8080 -p 50000:50000 -v /var/jenkins_home andisan/jenkins`
 
 ## Jenkins global tool configuration
 Jenkins global tools are not configured by default. After container is started, supply these variables in Jenkins > Global Tool Configuration:
