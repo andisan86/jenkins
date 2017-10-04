@@ -1,5 +1,6 @@
 # jenkins
 
+## Contents
 This Jenkins image has the following:
 - Latest Jenkins LTS
 - OpenJDK 8
@@ -8,9 +9,7 @@ This Jenkins image has the following:
 - Git
 - Minimal plugins to get CI process started
 
-Also included is a docker-compose.yml which starts up this Jenkins image and a Selenium Grid setup (a hub, a Firefox node and a Chrome node).
-
-Pre-installed Jenkins plugins:
+## Pre-installed Jenkins plugins
 - Maven Integration
 - Docker and Docker Slaves
 - Build Pipeline
@@ -26,4 +25,14 @@ Pre-installed Jenkins plugins:
 - Workflow Aggregator
 - Docker Build Step
 
-This image is inspired by JenkinsCI (https://hub.docker.com/r/jenkinsci/jenkins/) and Stephen Reed's Jenkins repo (https://hub.docker.com/r/stephenreed/jenkins-java8-maven-git/).
+## How to run
+1. Pull the docker image: `docker pull andisan/jenkins`
+2. Run with this command: `docker run -t -i -p 8080:8080 -P andisan/jenkins`
+
+## Jenkins global tool configuration
+Jenkins global tools are not configured by default. After container is started, supply these variables in Jenkins > Global Tool Configuration:
+* JDK > JAVA_HOME: /docker-java-home
+* Maven > MAVEN_HOME: /opt/maven
+
+## Additionals
+Included is a docker-compose.yml which starts up this Jenkins image and a Selenium Grid setup (a hub, a Firefox node and a Chrome node)
